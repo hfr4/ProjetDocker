@@ -1,0 +1,155 @@
+html {
+    background-color : #013121
+}
+
+table {
+    border-collapse : collapse;
+    width           : 100%;
+}
+
+td, th {
+    border  : 1px solid #ddd;
+    padding : 8px;
+}
+
+tr:nth-child(even) {
+    background-color : #f2f2f2;
+    color            : black;
+}
+
+tr:nth-child(odd) {
+    background-color : #FFFFFF;
+    color            : black;
+}
+
+tr:hover {
+    background-color : #ddd;
+}
+
+th {
+    padding          : 15px;
+    text-align       : left;
+    background-color : green;
+    color            : white;
+    font-weight      : normal;
+}
+
+a {
+    color : white;
+}
+
+table a {
+    color : black;
+}
+
+a:hover {
+    color : rgb(0, 200, 0);
+}
+
+textarea {
+    width  : 100%;
+    height : 150px;
+}
+
+#app {
+    max-width   : 1000px;
+    margin      : auto;
+    font-family : 'Courier New', Courier, monospace;
+    color       : white;
+}
+
+.cards_container {
+    display               : grid;
+    grid-template-columns : repeat(auto-fit, minmax(min(max(33.33%, 300px), 100%), 1fr));
+    justify-items         : center;
+}
+
+.card {
+	position   : relative;
+	width      : 300px; 
+	height     : 300px;
+	min-width  : 300px; 
+	min-height : 300px;
+    padding    : 10px;
+}
+
+.card_header {
+    border : 1px solid #ddd;
+}
+
+.card_title {
+    background   : green;
+    padding-left : 10px;
+    padding-top  : 5px;
+    color        : white;
+    font-size    : large;
+}
+
+.card_body {
+    background    : #000;
+    display       : flex;
+    height        : 270px;
+    top           : 30px;
+    cursor        : pointer;
+    border-left   : 1px solid #ddd;
+    border-right  : 1px solid #ddd;
+    border-bottom : 1px solid #ddd;
+}
+
+.card_img {
+    max-width  : 100%;
+    max-height : 100%;
+    margin     : auto;
+}
+
+.button {
+    width            : 65%;
+    background-color : green;
+    cursor           : pointer;
+    text-align       : center;
+    color            : white;
+    padding-top      : 15px;
+    padding-bottom   : 15px;
+    margin           : auto;
+    border           : 1px solid #ddd;
+}
+
+.button:hover {
+    background-color : darkgreen;
+}
+
+.button_delete {
+    width            : 65%;
+    background-color : firebrick;
+    cursor           : pointer;
+    text-align       : center;
+    color            : white;
+    padding-top      : 15px;
+    padding-bottom   : 15px;
+    margin           : auto;
+    border           : 1px solid #ddd;
+}
+
+.button_delete:hover {
+    background-color :  darkred;
+}
+
+.button_edit {
+    width            : 65%;
+    background-color : darkorange;
+    cursor           : pointer;
+    text-align       : center;
+    color            : white;
+    padding-top      : 15px;
+    padding-bottom   : 15px;
+    margin           : auto;
+    border           : 1px solid #ddd;
+}
+
+.button_edit:hover {
+    background-color : rgb(161, 89, 0);
+}
+
+.separation {
+    height : 20px;
+}

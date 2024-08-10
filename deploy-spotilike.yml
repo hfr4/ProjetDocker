@@ -1,0 +1,40 @@
+---
+- name: Deploy Docker Compose Application
+	hosts: your_target_host
+	become: yes  # This allows Ansible to use sudo
+
+	tasks:
+		- name: Ensure Docker is installed
+			ansible.builtin.package:
+				name: 
+					- docker
+					- docker-compose
+				state: present
+
+		- name: Ensure Docker service is running
+			ansible.builtin.service:
+				name: docker
+				state: started
+				enabled: yes
+
+		- name: Create project directory
+			ansible.builtin.file:
+				path: /opt/spotilike
+				state: directory
+				mode: '0755'
+
+		- name: Copy Docker Compose file
+			ansible.builtin.copy:
+				src: docker-compose.yml
+				dest: /opt/spotilike/docker-compose.yml
+
+		- name: Ensure mongo-init.js exists
+			ansible.builtin.file:
+				path: /opt/spotilike/database/mongo-init.js
+				state: touch
+				mode: '0644'
+
+		- name: Launch Docker Compose
+			ansible.builtin.shell:
+				cmd: docker-compose up -d
+				chdir: /opt/spotilike
